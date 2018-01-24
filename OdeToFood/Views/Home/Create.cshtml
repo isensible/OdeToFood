@@ -1,0 +1,27 @@
+﻿@model Restaurant
+
+@{
+    ViewBag.Title = "OdeToFood - Add restaurant";
+}
+
+<h1>Create</h1>
+
+<form method="post">
+    
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name"/>
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <div>
+        <label asp-for="CuisineType"></label>
+        <select asp-for="CuisineType"
+                asp-items="@Html.GetEnumSelectList<CuisineType>()">
+        </select>
+        <span asp-validation-for="CuisineType"></span>
+    </div>
+    
+    <input type="submit" name="save" value="Save" />
+    
+</form>

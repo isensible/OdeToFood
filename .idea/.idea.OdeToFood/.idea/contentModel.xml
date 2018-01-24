@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\code\OdeToFood" t="IncludeFlat">
+      <e p="OdeToFood" t="IncludeRecursive">
+        <e p="appsettings.development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="AboutController.cs" t="Include" />
+          <e p="HomeController.cs" t="Include" />
+        </e>
+        <e p="Data" t="Include">
+          <e p="OdeToFoodDbContext.cs" t="Include" />
+        </e>
+        <e p="Migrations" t="Include">
+          <e p="20180119101409_InitialCreate.cs" t="Include" />
+          <e p="20180119101409_InitialCreate.Designer.cs" t="Include" />
+          <e p="OdeToFoodDbContextModelSnapshot.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="CuisineType.cs" t="Include" />
+          <e p="Restaurant.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.0" t="Include">
+              <e p="OdeToFood.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="OdeToFood.csproj" t="IncludeRecursive" />
+        <e p="Pages" t="Include">
+          <e p="_Layout.cshtml" t="Include" />
+          <e p="_ViewImports.cshtml" t="Include" />
+          <e p="_ViewStart.cshtml" t="Include" />
+          <e p="Greeting.cshtml" t="Include" />
+          <e p="GreetingModel.cs" t="Include" />
+          <e p="Restaurants" t="Include">
+            <e p="Edit.cshtml" t="Include" />
+            <e p="EditModel.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Services" t="Include">
+          <e p="IGreeter.cs" t="Include" />
+          <e p="InMemoryRestaurantData.cs" t="Include" />
+          <e p="IRestaurantData.cs" t="Include" />
+          <e p="SqlRestaurantData.cs" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="ViewModels" t="Include">
+          <e p="HomeIndexViewModel.cs" t="Include" />
+          <e p="RestaurantEditModel.cs" t="Include" />
+        </e>
+        <e p="Views" t="Include">
+          <e p="_ViewImports.cshtml" t="Include" />
+          <e p="_ViewStart.cshtml" t="Include" />
+          <e p="Home" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="shared" t="Include">
+            <e p="_Layout.cshtml" t="Include" />
+          </e>
+        </e>
+        <e p="wwwroot" t="Include" />
+      </e>
+      <e p="OdeToFood.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+    <e p="C:\Users\edjam\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_OdeToFood.177890912.00" t="ExcludeRecursive" />
+  </component>
+</project>
