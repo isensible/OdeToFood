@@ -5,20 +5,15 @@
 }
 
 <h1>All restaurants</h1>
-<table>
-    @foreach (var restaurant in Model.Restaurants)
-    {
-        <tr>
-            <td>@restaurant.Id</td>
-            <td>@restaurant.Name</td>
-            <td>
-                <a asp-action="Details" asp-route-id="@restaurant.Id">More</a>
-                <a asp-page="/Restaurants/Edit" asp-route-id="@restaurant.Id">Edit</a>
-            </td>
-        </tr>
-    }
-</table>
-<a asp-action="Create">Add new restaurant</a>
+
+@foreach (var restaurant in Model.Restaurants)
+{
+    @Html.Partial("_Summary", restaurant)
+}
+
+<div>
+    <a asp-action="Create">Add new restaurant</a>
+</div>
 
 @section footer {
     @Model.MessageOfTheDay
