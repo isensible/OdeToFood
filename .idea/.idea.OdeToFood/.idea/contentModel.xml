@@ -49,6 +49,9 @@
           <e p="SqlRestaurantData.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
+        <e p="ViewComponents" t="Include">
+          <e p="GreeterViewComponent.cs" t="Include" />
+        </e>
         <e p="ViewModels" t="Include">
           <e p="HomeIndexViewModel.cs" t="Include" />
           <e p="RestaurantEditModel.cs" t="Include" />
@@ -64,6 +67,11 @@
           </e>
           <e p="shared" t="Include">
             <e p="_Layout.cshtml" t="Include" />
+            <e p="Components" t="Include">
+              <e p="Greeter" t="Include">
+                <e p="Default.cshtml" t="Include" />
+              </e>
+            </e>
           </e>
         </e>
         <e p="wwwroot" t="Include" />
