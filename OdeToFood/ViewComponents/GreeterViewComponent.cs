@@ -15,7 +15,6 @@ namespace OdeToFood.ViewComponents
         public IViewComponentResult Invoke()
         {
             var model = _greeter.GetMessageOfTheDay();
-            // Default is the default name of a view component
             return View("Default", model);
         }
     }

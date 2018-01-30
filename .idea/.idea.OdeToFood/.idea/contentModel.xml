@@ -6,6 +6,7 @@
         <e p="appsettings.development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="certificate.json" t="Include" />
         <e p="Controllers" t="Include">
           <e p="AboutController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
@@ -13,6 +14,7 @@
         <e p="Data" t="Include">
           <e p="OdeToFoodDbContext.cs" t="Include" />
         </e>
+        <e p="localhost.pfx" t="Include" />
         <e p="Migrations" t="Include">
           <e p="20180119101409_InitialCreate.cs" t="Include" />
           <e p="20180119101409_InitialCreate.Designer.cs" t="Include" />

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -44,7 +45,6 @@ namespace OdeToFood
         public void Configure(
             IApplicationBuilder app, 
             IHostingEnvironment env,
-            IGreeter greeter,
             ILogger<Startup> logger)
         {
             if (env.IsDevelopment())
@@ -56,6 +56,9 @@ namespace OdeToFood
                 app.UseExceptionHandler();
             }
 
+            // Always use SSL (HTTPS)
+            //app.UseRewriter(new RewriteOptions().AddRedirectToHttpsPermanent());
+
             // serve a file from wwwroot only if URL matches exactly
             app.UseStaticFiles();
 
@@ -63,7 +66,6 @@ namespace OdeToFood
 
             app.Run(async (context) =>
             {
-                var greeting = greeter.GetMessageOfTheDay();
                 context.Response.ContentType = "text/plain";
                 await context.Response.WriteAsync("Not found");
             });
