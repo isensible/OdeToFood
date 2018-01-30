@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
@@ -35,10 +36,24 @@ namespace OdeToFood
 
             services.AddDbContext<OdeToFoodDbContext>(options =>
                 options.UseSqlServer(_configuration.GetConnectionString("OdeToFood")));
+            
             services.AddScoped<IRestaurantData, SqlRestaurantData>();
             
             // Add MVC services to route requests through the MVC framework
-            services.AddMvc();
+            services.AddMvc(options =>
+            {
+                options.SslPort = 44321;
+                options.Filters.Add(new RequireHttpsAttribute());
+            });
+
+            // Set the anti-forgery token cookie to use a secure cookie
+            services.AddAntiforgery(options =>
+            {
+                options.Cookie.Name = "_af";
+                options.Cookie.HttpOnly = true;
+                options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+                options.HeaderName = "X-XSRF-TOKEN";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,7 +72,7 @@ namespace OdeToFood
             }
 
             // Always use SSL (HTTPS)
-            //app.UseRewriter(new RewriteOptions().AddRedirectToHttpsPermanent());
+            app.UseRewriter(new RewriteOptions().AddRedirectToHttpsPermanent());
 
             // serve a file from wwwroot only if URL matches exactly
             app.UseStaticFiles();
